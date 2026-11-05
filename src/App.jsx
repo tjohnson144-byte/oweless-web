@@ -1,5 +1,5 @@
 import React,{ Suspense, useEffect, useRef, useState } from 'react';
-import { ArrowRight, ArrowDown, Wind, WindOff, Compass, ShieldCheck, Sprout, Scale, Heart, Menu, X, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowDown, Wind, Pause, Compass, ShieldCheck, Scale, Heart, Menu, X, Play } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CinematicWorld from './World.jsx';
@@ -36,7 +36,7 @@ function App(){
   return <div className="site" id="home">
     <header className="nav"><a className="logo" href="#home" aria-label="OweLess home"><span className="logo-script">Owe<span>Less</span></span><span className="logo-sub">PATHFINDER</span></a>
       <nav aria-label="Primary navigation" className={menuOpen?'nav-items open':'nav-items'}><a href="#story" onClick={()=>setMenuOpen(false)}>How It Works</a><a href="#possibilities" onClick={()=>setMenuOpen(false)}>Your Options</a><a href="#difference" onClick={()=>setMenuOpen(false)}>Why OweLess</a></nav>
-      <div className="nav-actions"><button type="button" className="motion-btn" onClick={()=>setMotion(m=>!m)} aria-label={motion?'Turn off animations':'Turn on animations'} title={motion?'Pause scene':'Play scene'}>{motion?<Wind size={18}/>:<WindOff size={18}/>}</button><a className="pill nav-primary" href={PATHFINDER_URL}>Find My Path <ArrowRight size={17}/></a><button className="menu-btn" type="button" aria-label="Toggle menu" aria-expanded={menuOpen} onClick={()=>setMenuOpen(m=>!m)}>{menuOpen?<X/>:<Menu/>}</button></div>
+      <div className="nav-actions"><button type="button" className="motion-btn" onClick={()=>setMotion(m=>!m)} aria-label={motion?'Turn off animations':'Turn on animations'} title={motion?'Pause scene':'Play scene'}>{motion?<Wind size={18}/>:<Pause size={18}/>}</button><a className="pill nav-primary" href={PATHFINDER_URL}>Find My Path <ArrowRight size={17}/></a><button className="menu-btn" type="button" aria-label="Toggle menu" aria-expanded={menuOpen} onClick={()=>setMenuOpen(m=>!m)}>{menuOpen?<X/>:<Menu/>}</button></div>
     </header>
     <main>
       <section className="hero" aria-labelledby="hero-title">
